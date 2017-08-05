@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeApi", "HomeApi\HomeApi.csproj", "{2EBC01FC-C73B-4292-A8A7-A31237013A29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{9678D6CF-F75F-4DE6-85C6-88CB65B51874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceIdentity", "DeviceIdentity\DeviceIdentity.csproj", "{074BC395-B050-444E-90EE-9D9379B19E54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeviceIdentity", "DeviceIdentity\DeviceIdentity.csproj", "{074BC395-B050-444E-90EE-9D9379B19E54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtractorFanController", "ExtractorFanController", "{75CA00DD-3375-46AF-A6FF-03A27B8F79EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractorFanController", "ExtractorFanController\ExtractorFanController.csproj", "{7A941B2F-54C4-4549-9DD6-16D8ABE1FA20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +27,16 @@ Global
 		{074BC395-B050-444E-90EE-9D9379B19E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{074BC395-B050-444E-90EE-9D9379B19E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{074BC395-B050-444E-90EE-9D9379B19E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A941B2F-54C4-4549-9DD6-16D8ABE1FA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A941B2F-54C4-4549-9DD6-16D8ABE1FA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A941B2F-54C4-4549-9DD6-16D8ABE1FA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A941B2F-54C4-4549-9DD6-16D8ABE1FA20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{074BC395-B050-444E-90EE-9D9379B19E54} = {9678D6CF-F75F-4DE6-85C6-88CB65B51874}
+		{7A941B2F-54C4-4549-9DD6-16D8ABE1FA20} = {75CA00DD-3375-46AF-A6FF-03A27B8F79EC}
 	EndGlobalSection
 EndGlobal
