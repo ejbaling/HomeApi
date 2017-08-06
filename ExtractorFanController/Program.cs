@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DeviceController;
+using DeviceController.Contract;
+using DeviceController.Implementation;
+using System;
 using System.Timers;
 
 namespace ExtractorFanController
@@ -11,12 +10,15 @@ namespace ExtractorFanController
     {
         #region Variable Declarations
         private static Timer timer;
+        private const int TURNED_ON_DELAY = 10000;  // 10 seconds
+        private const int TURNED_OFF_DELAY = 5000;  //  5 seconds
         //private const int TURNED_ON_DELAY = 600000;  // 10 minutes
         //private const int TURNED_OFF_DELAY = 300000; //  5 minutes
-        private const int TURNED_ON_DELAY = 600000;    // 10 minutes
-        private const int TURNED_OFF_DELAY = 3600000;  //  1 hour
+        //private const int TURNED_ON_DELAY = 600000;    // 10 minutes
+        //private const int TURNED_OFF_DELAY = 3600000;  //  1 hour
         private static int counter;
         private static Status currentStatus;
+        private static IDevice device;
         #endregion
 
         #region Enums
@@ -29,6 +31,9 @@ namespace ExtractorFanController
 
         static void Main(string[] args)
         {
+            device = DeviceFactory.Create<Arduino>();
+            // device = DeviceFactory.Create<RaspberryPi>();
+
             SetTimer();
 
             Console.WriteLine("\nPress the Enter key to exit the application...\n");
@@ -57,12 +62,9 @@ namespace ExtractorFanController
 
             if (currentStatus == Status.ON)
             {
-                //Console.WriteLine("The Elapsed event was raised at {0:HH:mm:ss.fff}",
-                //                  e.SignalTime);
-
                 if (counter > TURNED_ON_DELAY)
                 {
-                    Console.WriteLine(string.Format("{0} Extractor fan turned off.", DateTime.Now));
+                    device.TurnOff();
                     counter = 1000;
                     currentStatus = Status.OFF;
                     return;
@@ -71,7 +73,6 @@ namespace ExtractorFanController
 
             if (currentStatus == Status.OFF)
             {
-                Console.WriteLine(currentStatus);
                 if (counter > TURNED_OFF_DELAY)
                 {
                     CheckHumidity();
@@ -83,7 +84,7 @@ namespace ExtractorFanController
 
         private static void CheckHumidity()
         {
-            Console.WriteLine(string.Format("{0} Extractor fan turned on.", DateTime.Now));
+            device.TurnOn();
             currentStatus = Status.ON;
         }
     }

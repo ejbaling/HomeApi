@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ExtractorFanController")]
+[assembly: AssemblyTitle("DeviceController")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Toshiba")]
-[assembly: AssemblyProduct("ExtractorFanController")]
+[assembly: AssemblyProduct("DeviceController")]
 [assembly: AssemblyCopyright("Copyright © Toshiba 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ba9edcd7-5c6a-4422-8b17-b4aa79049c01")]
+[assembly: Guid("4765b4f5-d584-4271-a1ad-734fa0e24bfb")]
 
 // Version information for an assembly consists of the following four values:
 //
